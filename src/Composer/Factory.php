@@ -415,6 +415,7 @@ class Factory
         $rm->setRepositoryClass('git', 'Composer\Repository\VcsRepository');
         $rm->setRepositoryClass('gitlab', 'Composer\Repository\VcsRepository');
         $rm->setRepositoryClass('svn', 'Composer\Repository\VcsRepository');
+        $rm->setRepositoryClass('svn-export', 'Composer\Repository\VcsRepository');
         $rm->setRepositoryClass('perforce', 'Composer\Repository\VcsRepository');
         $rm->setRepositoryClass('hg', 'Composer\Repository\VcsRepository');
         $rm->setRepositoryClass('artifact', 'Composer\Repository\ArtifactRepository');
@@ -484,6 +485,7 @@ class Factory
 
         $dm->setDownloader('git', new Downloader\GitDownloader($io, $config, $executor, $fs));
         $dm->setDownloader('svn', new Downloader\SvnDownloader($io, $config, $executor, $fs));
+        $dm->setDownloader('svn-export', new Downloader\SvnExportDownloader($io, $config, $executor, $fs));
         $dm->setDownloader('hg', new Downloader\HgDownloader($io, $config, $executor, $fs));
         $dm->setDownloader('perforce', new Downloader\PerforceDownloader($io, $config));
         $dm->setDownloader('zip', new Downloader\ZipDownloader($io, $config, $eventDispatcher, $cache, $executor, $rfs));

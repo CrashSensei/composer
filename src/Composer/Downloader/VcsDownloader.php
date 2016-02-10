@@ -94,7 +94,7 @@ abstract class VcsDownloader implements DownloaderInterface, ChangeReportInterfa
 
         $name = $target->getName();
         if ($initial->getPrettyVersion() == $target->getPrettyVersion()) {
-            if ($target->getSourceType() === 'svn') {
+            if ($target->getSourceType() === 'svn' || $target->getSourceType() === 'svn-export') {
                 $from = $initial->getSourceReference();
                 $to = $target->getSourceReference();
             } else {
